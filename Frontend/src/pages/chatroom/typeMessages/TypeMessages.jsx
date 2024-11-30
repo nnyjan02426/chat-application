@@ -6,7 +6,7 @@ const TypeMessages = () => {
   return (
     <>
       <div id='typeMessages'>
-        <img src={image} alt='image' id='addImage' className='button' />
+        <img src={image} alt='imageButton' id='addImage' className='button' />
         <span id='inputText'>
           <input type='text' placeholder='type message here' />
         </span>

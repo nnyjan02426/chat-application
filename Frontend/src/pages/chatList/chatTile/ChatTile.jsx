@@ -6,7 +6,7 @@ const ChatTile = () => {
   return (
     <div className='chatTile'>
       {/* shows user's image */}
-      <img src={defaultUser} alt='user image' id='userImage' />
+      <img src={defaultUser} alt='user' id='userImage' />
 
       {/* shows user's name */}
       <div className='text'>
