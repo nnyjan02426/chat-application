@@ -1,0 +1,29 @@
+:root {
+  /*colors*/
+  --base-color: #1e1e2e;
+  --text-color: #cdd6f4;
+  --surface-color: #45475a;
+}
+
+#typeMessages {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-top: 1px solid;
+
+  #inputText {
+    background-color: var(--surface-color);
+    border-radius: 1rem;
+    padding: 5px;
+    flex: 6;
+  }
+
+  #img #inputText {
+    float: left;
+  }
+
+  #send {
+    float: right;
+  }
+}

@@ -1,0 +1,26 @@
+:root {
+  /*colors*/
+  --base-color: #1e1e2e;
+  --text-color: #cdd6f4
+}
+
+#userTile {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  #userImage {
+    background: var(--text-color);
+    width: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}

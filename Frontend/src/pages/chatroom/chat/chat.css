@@ -1,0 +1,45 @@
+:root {
+  /*colors*/
+  --base-color: #1e1e2e;
+  --text-color: #cdd6f4;
+  --surface: #313244;
+  --blue: #24467d;
+  --crust: #11111b;
+}
+
+#chat {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  gap: 10px;
+}
+
+.message {
+  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+
+  &.sent {
+    align-self: flex-end;
+  }
+
+  img {
+    filter: invert(100%);
+    max-width: 100%;
+  }
+}
+
+.textMessage {
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+
+.sent .textMessage {
+  background: var(--blue);
+}
+
+.receive .textMessage {
+  background: var(--surface);
+}

@@ -1,0 +1,35 @@
+:root {
+  /*colors*/
+  --base-color: #1e1e2e;
+  --text-color: #cdd6f4;
+  --subtext-color: #a6adc8;
+}
+
+.roomname {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+#username {
+  font-weight: bold;
+}
+
+#note {
+  color: var(--subtext-color)
+}
+
+#userImage {
+  background: var(--text-color);
+  width: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}

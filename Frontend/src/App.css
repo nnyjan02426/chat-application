@@ -1,0 +1,70 @@
+:root {
+  /*colors*/
+  --base-color: #1e1e2e;
+  --text-color: #cdd6f4
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: var(--base-color);
+  color: var(--text-color);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.searchInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--surface-color);
+  border-radius: 1rem;
+  flex: 6;
+  gap: 10px;
+
+  #clear {
+    float: right;
+  }
+}
+
+input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  float: left;
+  color: var(--text-color);
+}
+
+
+.button,
+.icon {
+  width: 20px;
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: scale(1.2);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}

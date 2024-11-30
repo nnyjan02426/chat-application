@@ -1,0 +1,14 @@
+:root {
+  /*colors*/
+  --base-color: #1e1e2e;
+  --text-color: #cdd6f4;
+  --surface-color: #45475a;
+}
+
+#searchBar {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: stretch;
+  gap: 10px;
+}

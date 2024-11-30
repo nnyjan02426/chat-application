@@ -1,0 +1,30 @@
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+#login-info {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  padding: 40px;
+  padding-top: 10px;
+  gap: 10px;
+
+  h1 {
+    text-align: center;
+  }
+
+  .login-button {
+    text-align: center;
+    flex: 1;
+    padding: 10px;
+  }
+
+  .login-button:hover {
+    font-weight: bold;
+  }
+}
