@@ -5,6 +5,9 @@ on:
     branches:
       - main  # Trigger deployment on pushes to the main branch
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -30,5 +33,6 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
         publish_dir: ./Frontend/build  # Path to the build directory
 
