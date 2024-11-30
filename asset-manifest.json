@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/chat-application/static/css/main.61f88b4e.css",
+    "main.js": "/chat-application/static/js/main.1b12b5e9.js",
+    "static/media/email.svg": "/chat-application/static/media/email.68f25a7ccd73f7a88de37b80795fbe3c.svg",
+    "static/media/image.svg": "/chat-application/static/media/image.53275f6e1494bf76d7438de83d98ec27.svg",
+    "static/media/send.svg": "/chat-application/static/media/send.045352e9aa7d98994484ffb8ec3dbe38.svg",
+    "static/media/add-user.svg": "/chat-application/static/media/add-user.5c949c24be71bc35fceabf523a00af1f.svg",
+    "static/media/password.svg": "/chat-application/static/media/password.04e46be082c8e2c9b95183b1374150e6.svg",
+    "static/media/user.svg": "/chat-application/static/media/user.f9758cb0d70f24cd9122b7b68c9b92d9.svg",
+    "index.html": "/chat-application/index.html",
+    "static/media/logout.svg": "/chat-application/static/media/logout.8aada1af34bbe0b685295ef2bc70d4f3.svg",
+    "static/media/search.svg": "/chat-application/static/media/search.80f61b2471bf627e84f5136291187cc6.svg",
+    "static/media/edit.svg": "/chat-application/static/media/edit.ff9614c706ed618b103cd06ca2b8f0d8.svg",
+    "static/media/default-user.svg": "/chat-application/static/media/default-user.e3a7fca9f2b507f7287060f52b09657b.svg",
+    "static/media/clear.svg": "/chat-application/static/media/clear.9eca0c7e2cef0face61953307cd0547b.svg",
+    "static/media/more-horizontal.svg": "/chat-application/static/media/more-horizontal.d5656ba78064cd7d7819cdc974ce6661.svg",
+    "main.61f88b4e.css.map": "/chat-application/static/css/main.61f88b4e.css.map",
+    "main.1b12b5e9.js.map": "/chat-application/static/js/main.1b12b5e9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61f88b4e.css",
+    "static/js/main.1b12b5e9.js"
+  ]
+}
