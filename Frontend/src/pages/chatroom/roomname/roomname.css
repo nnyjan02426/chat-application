@@ -1,17 +1,10 @@
-:root {
-  /*colors*/
-  --base-color: #1e1e2e;
-  --text-color: #cdd6f4;
-  --subtext-color: #a6adc8;
-}
-
 .roomname {
   display: flex;
   align-items: center;
   padding: 15px;
   gap: 20px;
   cursor: pointer;
-  border-bottom: 1px solid;
+  border-bottom: 1px groove var(--border-color-a);
 }
 
 .text {

@@ -1,12 +1,3 @@
-:root {
-  /*colors*/
-  --base-color: #1e1e2e;
-  --text-color: #cdd6f4;
-  --surface: #313244;
-  --blue: #24467d;
-  --crust: #11111b;
-}
-
 #chat {
   padding: 20px;
   flex: 1;
@@ -37,9 +28,9 @@
 }
 
 .sent .textMessage {
-  background: var(--blue);
+  background: var(--blue-color);
 }
 
 .receive .textMessage {
-  background: var(--surface);
+  background: var(--surface-color-b);
 }

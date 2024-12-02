@@ -1,7 +1,15 @@
 :root {
   /*colors*/
   --base-color: #1e1e2e;
-  --text-color: #cdd6f4
+  --text-color: #cdd6f4;
+  --subtext-color: #a6adc8;
+  --surface-color-a: #45475a;
+  --surface-color-b: #313244;
+  --border-color-a: #eba0ac;
+  --border-color-b: #b4befe;
+  --blue-color: #24467d;
+  --mantle-color: #181825;
+  --crust-color: #11111b;
 }
 
 body {
@@ -31,7 +39,7 @@ code {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: var(--surface-color);
+  background-color: var(--surface-color-a);
   border-radius: 1rem;
   flex: 6;
   gap: 10px;

@@ -1,16 +1,9 @@
-:root {
-  /*colors*/
-  --base-color: #1e1e2e;
-  --text-color: #cdd6f4
-}
-
 #userTile {
   display: flex;
   padding: 20px;
   align-items: center;
   justify-content: space-between;
 }
-
 
 .user {
   display: flex;

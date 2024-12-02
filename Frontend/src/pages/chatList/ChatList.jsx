@@ -12,6 +12,12 @@ const ChatList = () => {
       {/* TODO: add chat list */}
       <div className="column">
         <ChatTile />
+        <ChatTile />
+        <ChatTile />
+        <ChatTile />
+        <ChatTile />
+        <ChatTile />
+        <ChatTile />
       </div>
     </div>
   );

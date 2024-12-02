@@ -76,6 +76,7 @@ const Login = () => {
 
           <div id='login-buttons' className='buttons'>
             <p id='signin-login' className='login-button' onClick={(e) => handleSubmit(e, 'login')}>Sign In</p>
+            <p id='guest-login' className='login-button' >Login as Guest</p>
           </div>
         </div>
       </div>
