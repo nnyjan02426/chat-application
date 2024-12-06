@@ -7,20 +7,20 @@ import { useState } from 'react';
 
 
 const App = () => {
-  const [user, setUser] = useState(localStorage.getItem('token') ? true : false);
-  // const user = true;
+    const [user, setUser] = useState(localStorage.getItem('token') ? true : false);
+    // const user = true;
 
-  return (
-    <div id='App'>
-      {user ? (
-        <>
-          <ChatList />
-          <Chatroom />
-          <Details />
-        </>
-      ) : (<Login />)}
-    </div>
-  );
+    return (
+        <div id='App'>
+            {user ? (
+                <>
+                    <ChatList />
+                    <Chatroom />
+                    <Details />
+                </>
+            ) : (<Login setUser={setUser} />)}
+        </div>
+    );
 }
 
 export default App;
