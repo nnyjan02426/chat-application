@@ -1,0 +1,74 @@
+#editPage {
+  display: flex;
+  flex: 2;
+  gap: 10px;
+  padding: 15px;
+  flex-direction: column;
+  border-left: 1px groove var(--border-color-a);
+}
+
+#updateUserInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+
+  #updateAvatar,
+  #updateUsername {
+    border: 1px groove var(--border-color-b);
+    padding: 0 10px 10px 10px;
+    border-radius: 1rem;
+  }
+
+  label {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    img {
+      max-block-size: 100px;
+    }
+
+    p {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.TextButton {
+  width: fit-content;
+  display: flex;
+  gap: 10px;
+  padding: 0 10px 0 10px;
+  justify-self: center;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  border-radius: 1rem;
+  color: var(--crust-color);
+
+  .icon {
+    filter: none;
+  }
+
+  &#logout {
+    background: var(--red-color);
+    width: 80%;
+  }
+
+  &#updateInfo {
+    background: var(--green-color);
+    width: 70%;
+  }
+}
+
+.TextButton:hover {
+  font-weight: bold;
+  cursor: pointer;
+  filter: brightness(95%);
+
+  .icon {
+    transform: scale(1.07);
+  }
+}
