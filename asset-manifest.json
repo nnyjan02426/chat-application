@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/chat-application/static/css/main.59bcd6b4.css",
-    "main.js": "/chat-application/static/js/main.cd7a37ba.js",
+    "main.css": "/chat-application/static/css/main.110c5c8a.css",
+    "main.js": "/chat-application/static/js/main.215b1a30.js",
     "static/media/email.svg": "/chat-application/static/media/email.68f25a7ccd73f7a88de37b80795fbe3c.svg",
     "static/media/image.svg": "/chat-application/static/media/image.53275f6e1494bf76d7438de83d98ec27.svg",
     "static/media/send.svg": "/chat-application/static/media/send.045352e9aa7d98994484ffb8ec3dbe38.svg",
@@ -9,18 +9,20 @@
     "static/media/password.svg": "/chat-application/static/media/password.04e46be082c8e2c9b95183b1374150e6.svg",
     "static/media/user.svg": "/chat-application/static/media/user.f9758cb0d70f24cd9122b7b68c9b92d9.svg",
     "index.html": "/chat-application/index.html",
-    "static/media/defaultUser.svg": "/chat-application/static/media/defaultUser.ba4a7f6eeafc7440b4c066984cd38850.svg",
+    "static/media/defaultAvatar.svg": "/chat-application/static/media/defaultAvatar.e3a7fca9f2b507f7287060f52b09657b.svg",
+    "static/media/enter.svg": "/chat-application/static/media/enter.7c019c3cdeba1a3fd5b2027dea98f2a6.svg",
+    "static/media/leave.svg": "/chat-application/static/media/leave.8aada1af34bbe0b685295ef2bc70d4f3.svg",
     "static/media/logout.svg": "/chat-application/static/media/logout.8aada1af34bbe0b685295ef2bc70d4f3.svg",
     "static/media/search.svg": "/chat-application/static/media/search.80f61b2471bf627e84f5136291187cc6.svg",
+    "static/media/copy.svg": "/chat-application/static/media/copy.d8a39855de5a00f4501f5f3833ac89b1.svg",
     "static/media/edit.svg": "/chat-application/static/media/edit.ff9614c706ed618b103cd06ca2b8f0d8.svg",
     "static/media/default-user.svg": "/chat-application/static/media/default-user.e3a7fca9f2b507f7287060f52b09657b.svg",
     "static/media/clear.svg": "/chat-application/static/media/clear.9eca0c7e2cef0face61953307cd0547b.svg",
-    "static/media/more-horizontal.svg": "/chat-application/static/media/more-horizontal.d5656ba78064cd7d7819cdc974ce6661.svg",
-    "main.59bcd6b4.css.map": "/chat-application/static/css/main.59bcd6b4.css.map",
-    "main.cd7a37ba.js.map": "/chat-application/static/js/main.cd7a37ba.js.map"
+    "main.110c5c8a.css.map": "/chat-application/static/css/main.110c5c8a.css.map",
+    "main.215b1a30.js.map": "/chat-application/static/js/main.215b1a30.js.map"
   },
   "entrypoints": [
-    "static/css/main.59bcd6b4.css",
-    "static/js/main.cd7a37ba.js"
+    "static/css/main.110c5c8a.css",
+    "static/js/main.215b1a30.js"
   ]
 }
