@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 console.log('開始載入路由...');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
+const chatroomRoutes = require('./routes/chatroomRoutes');
 
 console.log('初始化 Express...');
 const app = express();
@@ -40,6 +41,7 @@ mongoose.connect(MONGODB_URI)
 console.log('設定路由...');
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/chatrooms', chatroomRoutes);
 
 // 基本路由測試
 app.get('/', (req, res) => {
