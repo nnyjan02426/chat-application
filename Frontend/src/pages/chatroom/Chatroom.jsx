@@ -12,17 +12,36 @@ const socket = io('http://localhost:3000');
 
 // fetch username from stored token
 const token = localStorage.getItem('token');
-const username = (token) ? jwtDecode(token).username : 'unknown';
+const { id: userId, username } = (token) ? jwtDecode(token) : { id: null, username: 'unknown' };
 
-
-const Chatroom = () => {
+const Chatroom = ({ roomId }) => {
   const [messages, setMessages] = useState([]);
-  // TODO: change rooms?
-  const [currentRoom, setCurrentRoom] = useState('general');
+  const [participants, setParticipants] = useState([]);
+
+  useEffect(() => {
+    const fetchParticipants = async () => {
+      try {
+        const response = await fetch(`/api/chatrooms/${roomId}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+        });
+        const data = await response.json();
+        if (response.ok) {
+          setParticipants(data.chatroom.participants); // Assuming API includes participants
+        } else {
+          alert(data.message || 'Failed to fetch participants.');
+        }
+      } catch (error) {
+        console.error('Error fetching participants:', error);
+      }
+    };
+    fetchParticipants();
+  }, [roomId]);
 
   useEffect(() => {
     // join chatroom
-    socket.emit('join_room', currentRoom);
+    socket.emit('join_room', roomId);
 
     // listen for messages
     socket.on('receive_message', (message) => {
@@ -30,12 +49,12 @@ const Chatroom = () => {
     });
 
     return () => { socket.off('receive_message'); }
-  }, [currentRoom]);
+  }, [roomId]);
 
   const sendMessage = (messageContent) => {
     const message = {
-      roomId: currentRoom,
-      sender: username,
+      roomId: roomId,
+      sender: userId,
       content: messageContent,
       timestamp: new Date().toLocaleTimeString(),
     }
@@ -49,8 +68,8 @@ const Chatroom = () => {
   return (
     <>
       <div id="chatroom">
-        <Roomname roomName={currentRoom} />
-        <Chat messages={messages} username={username} />
+        <Roomname roomId={roomId} />
+        <Chat messages={messages} username={username} userId={userId} participants={participants} />
         <TypeMessages onSendMessage={sendMessage} />
       </div>
     </>

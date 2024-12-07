@@ -9,4 +9,8 @@ router.get('/profile', authMiddleware, getUserProfile);
 // 更新用戶資料（需要驗證）
 router.put('/profile', authMiddleware, updateProfile);
 
+// fetch user by id
+router.get('/:id', authMiddleware, getUserById);
+
+
 module.exports = router;

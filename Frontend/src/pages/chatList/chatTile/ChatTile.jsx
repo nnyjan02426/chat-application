@@ -1,19 +1,40 @@
 import './chatTile.css';
 import defaultUser from './default-user.svg';
-import edit from './edit.svg';
+import leaveIcon from './leave.svg';
+import { jwtDecode } from 'jwt-decode';
 
-const ChatTile = () => {
+const getUserIdFromToken = () => {
+  const token = localStorage.getItem('token');
+  if (!token) return null;
+
+  try {
+    const decoded = jwtDecode(token); // Decode the token
+    return decoded.id; // Return the user ID from the payload
+  } catch (error) {
+    console.error('Failed to decode token:', error);
+    return null;
+  }
+
+};
+
+const ChatTile = ({ chatroom, showChatroom }) => {
+  const currentUserId = getUserIdFromToken();
+  const otherParticipants = chatroom.participants.filter((p) => p._id !== currentUserId);
+
   return (
-    <div className='chatTile'>
-      {/* shows user's image */}
-      <img src={defaultUser} alt='user' id='userImage' />
+    <div className='chatTile' onClick={showChatroom}>
+      {/* shows first user's avatar */}
+      <img src={otherParticipants[0]?.avatar || defaultUser} alt='user' id='userImage' />
 
-      {/* shows user's name */}
+      {/* shows users' name */}
       <div className='text'>
-        <p id='username'>User Name</p>
-        <span id='chatPreview'>some text</span>
+        <p id='username' className='participants'>{
+          otherParticipants.map((p) => p.username).join(', ')
+        }</p>
+        <span id='chatPreview'>{chatroom.lastMessage || 'No messages yet!'}</span>
       </div>
-      <img src={edit} alt='edit' id='edit' className='button' />
+      {/* TODO: leave chatroom by pressing the leave button */}
+      <img src={leaveIcon} alt='leave' id='leave' className='button icon' />
     </div>
   );
 }

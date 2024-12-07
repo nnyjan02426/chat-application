@@ -7,6 +7,8 @@
   --surface-color-b: #313244;
   --border-color-a: #eba0ac;
   --border-color-b: #b4befe;
+  --red-color: #f38ba8;
+  --green-color: #a6e3a1;
   --blue-color: #24467d;
   --mantle-color: #181825;
   --crust-color: #11111b;
@@ -75,4 +77,15 @@ input {
   align-items: center;
   gap: 5px;
   cursor: pointer;
+}
+
+#borderline {
+  width: 95%;
+  border: 0.5px groove var(--surface-color-a);
+  margin: 10px;
+}
+
+.participants {
+  width: 100%;
+  overflow: hidden;
 }

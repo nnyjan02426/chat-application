@@ -1,24 +1,32 @@
 .roomname {
   display: flex;
+  width: 100%;
   align-items: center;
   padding: 15px;
   gap: 20px;
   cursor: pointer;
   border-bottom: 1px groove var(--border-color-a);
+
+  .text {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  #roomId {
+    font-weight: bold;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #participants {
+    color: var(--subtext-color);
+    width: 100%;
+    overflow: hidden;
+  }
 }
 
-.text {
-  display: flex;
-  flex-direction: column;
-}
 
-#username {
-  font-weight: bold;
-}
-
-#note {
-  color: var(--subtext-color)
-}
 
 #userImage {
   background: var(--text-color);

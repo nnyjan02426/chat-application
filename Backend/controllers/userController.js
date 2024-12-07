@@ -51,3 +51,24 @@ exports.getUserProfile = async (req, res) => {
     res.status(500).json({ message: '取得用戶資料失敗', error: error.message });
   }
 };
+
+// fetch user by id
+exports.getUserById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Find the user by ID
+    const user = await User.findById(id).select('username avatar');
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.json({
+      username: user.username,
+      avatar: user.avatar,
+    });
+  } catch (error) {
+    console.error('Error fetching user:', error);
+    res.status(500).json({ message: 'Failed to fetch user', error: error.message });
+  }
+};
