@@ -17,9 +17,15 @@
     align-self: flex-end;
   }
 
-  img {
-    filter: invert(100%);
+  /*img {*/
+  /*  filter: invert(100%);*/
+  /*  max-width: 100%;*/
+  /*}*/
+  .imageMessage {
     max-width: 100%;
+    align-self: flex-end;
+    border-radius: 1rem;
+    margin-bottom: 15px;
   }
 
   .textMessage {

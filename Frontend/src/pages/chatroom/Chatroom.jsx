@@ -32,11 +32,11 @@ const Chatroom = () => {
     return () => { socket.off('receive_message'); }
   }, [currentRoom]);
 
-  const sendMessage = (messageText) => {
+  const sendMessage = (messageContent) => {
     const message = {
       roomId: currentRoom,
       sender: username,
-      text: messageText,
+      content: messageContent,
       timestamp: new Date().toLocaleTimeString(),
     }
 
