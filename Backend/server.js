@@ -15,7 +15,7 @@ const server = http.createServer(app);
 console.log('初始化 Socket.IO...');
 const io = socketIo(server, {
   cors: {
-    origin: "*", 
+    origin: "*",
     methods: ["GET", "POST"]
   }
 });
@@ -30,11 +30,11 @@ const MONGODB_URI = 'mongodb://localhost:27017/chat_application';
 // 連接數據庫
 console.log('嘗試連接 MongoDB...');
 mongoose.connect(MONGODB_URI)
-.then(() => console.log('MongoDB 連接成功'))
-.catch((err) => {
-  console.error('MongoDB 連接失敗:', err);
-  process.exit(1);
-});
+  .then(() => console.log('MongoDB 連接成功'))
+  .catch((err) => {
+    console.error('MongoDB 連接失敗:', err);
+    process.exit(1);
+  });
 
 // 路由
 console.log('設定路由...');

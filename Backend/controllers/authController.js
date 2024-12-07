@@ -18,9 +18,13 @@ exports.register = async (req, res) => {
     await user.save();
 
     // 生成 JWT token
-    const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '1d' });
+    const token = jwt.sign(
+      { id: user._id, username: user.usernaame },
+      JWT_SECRET,
+      { expiresIn: '1d' }
+    );
 
-    res.status(201).json({ 
+    res.status(201).json({
       message: '用戶註冊成功',
       token,
       user: { id: user._id, username: user.username, email: user.email }
@@ -47,9 +51,13 @@ exports.login = async (req, res) => {
     }
 
     // 生成 JWT token
-    const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '1d' });
+    const token = jwt.sign(
+      { id: user._id, username: user.usernaame },
+      JWT_SECRET,
+      { expiresIn: '1d' }
+    );
 
-    res.json({ 
+    res.json({
       message: '登入成功',
       token,
       user: { id: user._id, username: user.username, email: user.email }

@@ -7,8 +7,8 @@ import { useState } from 'react';
 
 
 const App = () => {
-    const [user, setUser] = useState(localStorage.getItem('token') ? true : false);
-    // const user = true;
+    // const [user, setUser] = useState(localStorage.getItem('token') ? true : false);
+    const [user, setUser] = useState(true);
 
     return (
         <div id='App'>
@@ -16,7 +16,7 @@ const App = () => {
                 <>
                     <ChatList />
                     <Chatroom />
-                    <Details />
+                    {/* <Details /> */}
                 </>
             ) : (<Login setUser={setUser} />)}
         </div>

@@ -8,6 +8,7 @@
 }
 
 .message {
+  width: fit-content;
   max-width: 75%;
   display: flex;
   flex-direction: column;
@@ -20,17 +21,38 @@
     filter: invert(100%);
     max-width: 100%;
   }
+
+  .textMessage {
+    align-self: flex-end;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 0.5rem;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+
+  #timestamp {
+    color: var(--subtext-color);
+    margin-top: -10px;
+  }
 }
 
-.textMessage {
-  padding: 10px;
-  border-radius: 0.5rem;
+.sent {
+  .textMessage {
+    background: var(--blue-color);
+  }
+
+  #timestamp {
+    text-align: right;
+  }
 }
 
-.sent .textMessage {
-  background: var(--blue-color);
-}
+.receive {
+  .textMessage {
+    background: var(--surface-color-b);
+  }
 
-.receive .textMessage {
-  background: var(--surface-color-b);
+  #timestamp {
+    text-align: left;
+  }
 }
