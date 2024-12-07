@@ -3,7 +3,6 @@ import clearIcon from './clear.svg';
 import userIcon from './user.svg';
 import emailIcon from './email.svg';
 import passwordIcon from './password.svg';
-import defaultAvatar from './defaultAvatar.svg';
 import { useState } from 'react';
 
 const Login = ({ setUser }) => {
@@ -11,16 +10,6 @@ const Login = ({ setUser }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
-
-  const [avatar, setAvatar] = useState({ file: null, url: "" })
-  const handleAvatar = (e) => {
-    if (e.target.files[0]) {
-      setAvatar({
-        file: e.target.files[0],
-        url: URL.createObjectURL(e.target.files[0])
-      })
-    }
-  }
 
   const handleSubmit = async (e, action) => {
     e.preventDefault();
@@ -87,12 +76,6 @@ const Login = ({ setUser }) => {
       <div id='signUp'>
         <div id='signUp-info'>
           <h1>Sign Up</h1>
-          <div id='uploadImage'>
-            <label htmlFor='file'>
-              <img src={avatar.url || defaultAvatar} alt="" /><p>Upload an Image</p>
-            </label>
-            <input type="file" id="file" style={{ display: 'none' }} onChange={handleAvatar} />
-          </div>
           <div id='userName' className='searchInput'>
             <img src={userIcon} alt='' id='user-icon' className='icon' />
             <input type="text" placeholder='username *' id='username-input' onChange={(e) => setUsername(e.target.value)} />

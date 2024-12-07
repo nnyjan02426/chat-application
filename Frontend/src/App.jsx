@@ -7,8 +7,8 @@ import { useState } from 'react';
 
 
 const App = () => {
-  // const [user, setUser] = useState(localStorage.getItem('token') ? true : false);
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(localStorage.getItem('token') ? true : false);
+  // const [user, setUser] = useState(true);
   const [showEdit, setShowEdit] = useState(true);
   const [currentRoomId, setCurrentRoomId] = useState(null);
 
