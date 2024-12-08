@@ -6,6 +6,11 @@
   gap: 20px;
   cursor: pointer;
   border-bottom: 1px solid var(--border-color-b);
+
+  .text {
+    flex: 5;
+    /*other css attributes are set at roomname.css*/
+  }
 }
 
 #userImage {
@@ -16,17 +21,6 @@
   float: left;
 }
 
-.text {
-  display: flex;
-  flex-direction: column;
-  float: left;
-  flex: 5;
-
-  #username {
-    font-weight: bold;
-  }
-}
-
-#edit {
+#leaveIcon {
   float: right;
 }

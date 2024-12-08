@@ -4,6 +4,8 @@
   padding: 15px;
   flex-direction: column;
   transition: width 0.2s ease;
+  max-width: calc(90%);
+  min-width: calc(20%);
 }
 
 #updateUserInfo {

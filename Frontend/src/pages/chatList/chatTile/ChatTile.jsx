@@ -28,13 +28,13 @@ const ChatTile = ({ chatroom, showChatroom }) => {
 
       {/* shows users' name */}
       <div className='text'>
-        <p id='username' className='participants'>{
+        <p id='participants' className='participants'>{
           otherParticipants.map((p) => p.username).join(', ')
         }</p>
         <span id='chatPreview'>{chatroom.lastMessage || 'No messages yet!'}</span>
       </div>
       {/* TODO: leave chatroom by pressing the leave button */}
-      <img src={leaveIcon} alt='leave' id='leave' className='button icon' />
+      <img src={leaveIcon} alt='leave' id='leaveIcon' className='button icon' />
     </div>
   );
 }

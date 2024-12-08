@@ -44,7 +44,10 @@ const Roomname = ({ roomId }) => {
       <img src={copyIcon} alt='copy' id='copyIcon' className='icon button' onClick={handleCopy} />
       {/* shows room details */}
       <div className='text'>
-        <p id='roomId'><span style={{ fontWeight: 'bold' }}>Room ID: </span>{roomId}</p>
+        <p id='roomId' title={`${roomId}`}>
+          <span style={{ fontWeight: 'bold' }}>Room ID: </span>
+          {roomId}
+        </p>
         <span className='participants' id='participants'>
           Participants: {participants.map((p) => p.username).join(', ')}
         </span>
