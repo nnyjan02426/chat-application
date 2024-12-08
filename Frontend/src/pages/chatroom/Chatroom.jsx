@@ -8,70 +8,71 @@ import { jwtDecode } from "jwt-decode";
 
 
 // backend url
-const socket = io('http://localhost:3000');
+// const socket = io('http://localhost:3000');
+const socket = io(process.env.SOCKET_URL || 'http://localhost:3000');
 
 // fetch username from stored token
 const token = localStorage.getItem('token');
 const { id: userId, username } = (token) ? jwtDecode(token) : { id: null, username: 'unknown' };
 
 const Chatroom = ({ dividerPosition, roomId }) => {
-  const [messages, setMessages] = useState([]);
-  const [participants, setParticipants] = useState([]);
+    const [messages, setMessages] = useState([]);
+    const [participants, setParticipants] = useState([]);
 
-  useEffect(() => {
-    const fetchParticipants = async () => {
-      try {
-        const response = await fetch(`/api/chatrooms/${roomId}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem('token')}`,
-          },
+    useEffect(() => {
+        const fetchParticipants = async () => {
+            try {
+                const response = await fetch(`/api/chatrooms/${roomId}`, {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`,
+                    },
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    setParticipants(data.chatroom.participants); // Assuming API includes participants
+                } else {
+                    alert(data.message || 'Failed to fetch participants.');
+                }
+            } catch (error) {
+                console.error('Error fetching participants:', error);
+            }
+        };
+        fetchParticipants();
+    }, [roomId]);
+
+    useEffect(() => {
+        // join chatroom
+        socket.emit('join_room', roomId);
+
+        // listen for messages
+        socket.on('receive_message', (message) => {
+            setMessages((prevMessages) => [...prevMessages, message]);
         });
-        const data = await response.json();
-        if (response.ok) {
-          setParticipants(data.chatroom.participants); // Assuming API includes participants
-        } else {
-          alert(data.message || 'Failed to fetch participants.');
+
+        return () => { socket.off('receive_message'); }
+    }, [roomId]);
+
+    const sendMessage = (messageContent) => {
+        const message = {
+            roomId: roomId,
+            sender: userId,
+            content: messageContent,
+            timestamp: new Date().toLocaleTimeString(),
         }
-      } catch (error) {
-        console.error('Error fetching participants:', error);
-      }
-    };
-    fetchParticipants();
-  }, [roomId]);
 
-  useEffect(() => {
-    // join chatroom
-    socket.emit('join_room', roomId);
-
-    // listen for messages
-    socket.on('receive_message', (message) => {
-      setMessages((prevMessages) => [...prevMessages, message]);
-    });
-
-    return () => { socket.off('receive_message'); }
-  }, [roomId]);
-
-  const sendMessage = (messageContent) => {
-    const message = {
-      roomId: roomId,
-      sender: userId,
-      content: messageContent,
-      timestamp: new Date().toLocaleTimeString(),
+        // emit message to backend
+        socket.emit('send_message', message);
+        // add message to local state
+        setMessages((prevMessages) => [...prevMessages, message]);
     }
 
-    // emit message to backend
-    socket.emit('send_message', message);
-    // add message to local state
-    setMessages((prevMessages) => [...prevMessages, message]);
-  }
-
-  return (
-    <div id="chatroom" style={{ flex: `${100 - dividerPosition} 0 0` }}>
-      <Roomname roomId={roomId} />
-      <Chat messages={messages} username={username} userId={userId} participants={participants} />
-      <TypeMessages onSendMessage={sendMessage} />
-    </div>
-  );
+    return (
+        <div id="chatroom" style={{ flex: `${100 - dividerPosition} 0 0` }}>
+            <Roomname roomId={roomId} />
+            <Chat messages={messages} username={username} userId={userId} participants={participants} />
+            <TypeMessages onSendMessage={sendMessage} />
+        </div>
+    );
 }
 
 export default Chatroom;

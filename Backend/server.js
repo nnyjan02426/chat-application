@@ -28,8 +28,6 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB 連接配置
-// const MONGODB_URI = 'mongodb://localhost:27017/chat_application';
-
 // 連接數據庫
 console.log('嘗試連接 MongoDB...');
 mongoose.connect(process.env.MONGO_URI)

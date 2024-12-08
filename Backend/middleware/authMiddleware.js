@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = 'your_jwt_secret_key'; // 正式環境應使用環境變量
+const JWT_SECRET = process.env.JWT_SECRET
 
 const authMiddleware = (req, res, next) => {
   // 從 Authorization header 取得 token
