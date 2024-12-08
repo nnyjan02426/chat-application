@@ -1,7 +1,8 @@
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
-const JWT_SECRET = 'your_jwt_secret_key'; // 正式環境中應該使用環境變量
+const JWT_SECRET = process.env.JWT_SECRET; // 正式環境中應該使用環境變量
 
 exports.register = async (req, res) => {
   try {
