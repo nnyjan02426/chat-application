@@ -25,7 +25,11 @@ const io = socketIo(server, {
 
 // 中間件
 app.options('*', cors());
-app.use(cors());
+app.use(cors({
+        origin: ["https://nnyjan02426.github.io", "http://localhost:3000"],
+        methods: ["GET", "POST"],
+        credentials: true,
+    }));
 app.use(express.json());
 
 // MongoDB 連接配置
