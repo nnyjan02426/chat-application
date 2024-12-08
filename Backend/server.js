@@ -17,13 +17,14 @@ const server = http.createServer(app);
 console.log('初始化 Socket.IO...');
 const io = socketIo(server, {
     cors: {
-        origin: "https://nnyjan02426.github.io",
+        origin: ["https://nnyjan02426.github.io", "http://localhost:3000"],
         methods: ["GET", "POST"],
         credentials: true,
     }
 });
 
 // 中間件
+app.options('*', cors());
 app.use(cors());
 app.use(express.json());
 

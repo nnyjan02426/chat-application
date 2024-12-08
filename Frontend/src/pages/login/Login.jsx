@@ -13,7 +13,10 @@ const Login = ({ setUser }) => {
 
   const handleSubmit = async (e, action) => {
     e.preventDefault();
-    if (email === '' || password === '' || (action === 'register' && username === '')) alert('please fill in the required fields');
+    if (email === '' || password === '' || (action === 'register' && username === '')) {
+        alert('please fill in the required fields');
+        return;
+    }
 
     const url = (action === 'login') ? '/api/auth/login' : '/api/auth/register';
     const payload = (action === 'login')

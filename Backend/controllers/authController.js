@@ -52,7 +52,7 @@ exports.login = async (req, res) => {
 
     // 生成 JWT token
     const token = jwt.sign(
-      { id: user._id, username: user.usernaame },
+      { id: user._id, username: user.username },
       JWT_SECRET,
       { expiresIn: '1d' }
     );
