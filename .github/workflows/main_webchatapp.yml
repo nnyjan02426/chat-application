@@ -20,14 +20,20 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
-
+      
+      - name: Change directory to Backend
+        working-directory: ./Backend
+        run: echo "Switched to Backend directory"
+          
       - name: npm install, build, and test
+        working-directory: ./Backend
         run: |
           npm install
           npm run build --if-present
           npm run test --if-present
 
       - name: Zip artifact for deployment
+        working-directory: ./Backend
         run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment job
