@@ -19,30 +19,39 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20' # Use the Node.js version your backend requires
-      
-      # Step 3: Add SOCKET_URL as an environment variable
+
+      # Step 3: Change working directory to Backend
+      - name: Change working directory
+        working-directory: ./Backend
+        run: echo "Changed to Backend directory"
+
+      # Step 4: Add SOCKET_URL as an environment variable
       - name: Set environment variable for SOCKET_URL
+        working-directory: ./Backend
         run: echo "REACT_APP_SOCKET_URL=${{ secrets.SOCKET_URL }}" >> $GITHUB_ENV
 
-      # Step 4: Install dependencies
+      # Step 5: Install dependencies
       - name: Install dependencies
+        working-directory: ./Backend
         run: npm install
 
       # Optional step: Run tests
       # Uncomment if you have tests to run
       # - name: Run tests
+      #   working-directory: ./Backend
       #   run: npm test
 
-      # Step 5: Zip artifact for deployment
+      # Step 6: Zip artifact for deployment
       - name: Zip artifact for deployment
+        working-directory: ./Backend
         run: zip -r release.zip ./*
 
-      # Step 6: Upload artifact for deployment job
+      # Step 7: Upload artifact for deployment job
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: release.zip
+          path: Backend/release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -80,3 +89,5 @@ jobs:
           app-name: 'WebChatApp' # Your Azure Web App name
           slot-name: 'Production'
           package: .
+          app-settings: |
+            JWT_SECRET=${{ secrets.JWT_SECRET }}
