@@ -1,22 +1,38 @@
 #loginSignUp {
   display: flex;
+  padding: 30px;
   align-items: center;
   justify-content: center;
   width: 100vw;
+  height: 100vh;
+  gap: 20px;
+  box-sizing: border-box;
 }
 
-#login,
-#signUp {
+@media only screen and (max-width: 800px) {
+  #loginSignUp {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (min-height: 800px) {
+  #loginSignUp {
+    height: 100vh;
+  }
+}
+
+.info-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  /*width: 100%;*/
   flex: 1;
 }
 
-#login-info,
-#signUp-info {
+.input-info {
   display: flex;
   flex-direction: column;
   background: var(--mantle-color);

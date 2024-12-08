@@ -14,7 +14,7 @@ const socket = io('http://localhost:3000');
 const token = localStorage.getItem('token');
 const { id: userId, username } = (token) ? jwtDecode(token) : { id: null, username: 'unknown' };
 
-const Chatroom = ({ roomId }) => {
+const Chatroom = ({ dividerPosition, roomId }) => {
   const [messages, setMessages] = useState([]);
   const [participants, setParticipants] = useState([]);
 
@@ -66,13 +66,11 @@ const Chatroom = ({ roomId }) => {
   }
 
   return (
-    <>
-      <div id="chatroom">
-        <Roomname roomId={roomId} />
-        <Chat messages={messages} username={username} userId={userId} participants={participants} />
-        <TypeMessages onSendMessage={sendMessage} />
-      </div>
-    </>
+    <div id="chatroom" style={{ flex: `${100 - dividerPosition} 0 0` }}>
+      <Roomname roomId={roomId} />
+      <Chat messages={messages} username={username} userId={userId} participants={participants} />
+      <TypeMessages onSendMessage={sendMessage} />
+    </div>
   );
 }
 

@@ -21,14 +21,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--base-color);
+  color: var(--text-color);
 }
 
 #App {
   width: 100vw;
   height: 100vh;
+  padding: 0;
+  margin: 0;
   display: flex;
-  background-color: var(--base-color);
-  color: var(--text-color);
+}
+
+#divider {
+  width: 3px;
+  background-color: var(--border-color-b);
+  cursor: ew-resize;
+  z-index: 10;
 }
 
 code {

@@ -4,7 +4,7 @@ import ChatTile from "./chatTile/ChatTile";
 import SearchBar from "./searchBar/SearchBar";
 import UserTile from "./userTile/UserTile";
 
-const ChatList = ({ showEdit, showChatroom }) => {
+const ChatList = ({ dividerPosition, showEdit, showChatroom }) => {
   const [chatrooms, setChatrooms] = useState([]);
 
   // fetch chatrooms which the user is participated in
@@ -77,7 +77,7 @@ const ChatList = ({ showEdit, showChatroom }) => {
   };
 
   return (
-    <div className="chatList">
+    <div className="chatList" style={{ flex: `${dividerPosition} 0 0` }}>
       <UserTile showEdit={showEdit} />
       <SearchBar onJoinRoom={handleJoinRoom} onCreateRoom={handleCreateRoom} />
 

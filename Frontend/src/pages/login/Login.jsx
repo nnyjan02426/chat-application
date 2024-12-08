@@ -51,8 +51,8 @@ const Login = ({ setUser }) => {
 
   return (
     <div id="loginSignUp">
-      <div id='login'>
-        <div id='login-info'>
+      <div id='login' className='info-box'>
+        <div id='login-info' className='input-info'>
           <h1>Login</h1>
           <div id='email' className='searchInput'>
             <img src={emailIcon} alt='' id='email-icon' className='icon' />
@@ -73,8 +73,8 @@ const Login = ({ setUser }) => {
           </div>
         </div>
       </div>
-      <div id='signUp'>
-        <div id='signUp-info'>
+      <div id='signUp' className='info-box'>
+        <div id='signUp-info' className="input-info">
           <h1>Sign Up</h1>
           <div id='userName' className='searchInput'>
             <img src={userIcon} alt='' id='user-icon' className='icon' />

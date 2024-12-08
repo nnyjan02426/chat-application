@@ -6,7 +6,7 @@ import userIcon from './user.svg';
 import clearIcon from './clear.svg';
 import enterIcon from './enter.svg';
 
-const Edit = ({ setUser }) => {
+const Edit = ({ dividerPosition, setUser }) => {
   const [username, setUsername] = useState('');
   const [avatar, setAvatar] = useState({ file: null, url: "" })
   const [isLoading, setIsLoading] = useState(false);
@@ -101,7 +101,7 @@ const Edit = ({ setUser }) => {
   };
 
   return (
-    <div id='editPage'>
+    <div id='editPage' style={{ flex: `${100 - dividerPosition} 0 0` }}>
       <h2>Update User Info</h2>
       <div id='updateUserInfo'>
         {/* change avatar */}

@@ -1,6 +1,6 @@
 .roomname {
   display: flex;
-  width: 100%;
+  max-width: 100%;
   align-items: center;
   padding: 15px;
   gap: 20px;
@@ -14,15 +14,12 @@
   }
 
   #roomId {
-    font-weight: bold;
     width: 100%;
-    overflow: hidden;
   }
 
   #participants {
     color: var(--subtext-color);
     width: 100%;
-    overflow: hidden;
   }
 }
 

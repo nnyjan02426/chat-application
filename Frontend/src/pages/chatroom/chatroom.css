@@ -1,6 +1,5 @@
 #chatroom {
   display: flex;
   flex-direction: column;
-  flex: 2;
-  border-left: 1px groove var(--border-color-a);
+  transition: width 0.2s ease;
 }
