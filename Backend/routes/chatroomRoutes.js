@@ -1,5 +1,5 @@
 const express = require('express');
-const { createChatroom, getChatrooms } = require('../controllers/chatroomController');
+const { createChatroom, getChatrooms, getChatroomById } = require('../controllers/chatroomController');
 const authMiddleware = require('../middleware/authMiddleware');
 const router = express.Router();
 
