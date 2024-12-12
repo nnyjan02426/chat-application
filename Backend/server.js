@@ -24,14 +24,15 @@ const io = socketIo(server, {
 });
 
 const corsOptions = {
-        origin: ["https://nnyjan02426.github.io", "http://localhost:3000"],
-        methods: ["GET", "POST", "OPTIONS"],
-        credentials: true,
-    }
+    // origin: ["https://nnyjan02426.github.io", "http://localhost:3000"],
+    origin: ["*"],
+    methods: ["GET", "POST", "OPTIONS"],
+    credentials: true,
+}
 
 // 中間件
-app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // MongoDB 連接配置
