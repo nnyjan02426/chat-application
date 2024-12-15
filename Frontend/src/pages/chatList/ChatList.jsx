@@ -40,6 +40,7 @@ const ChatList = ({ dividerPosition, showEdit, showChatroom }) => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
+        credentials: 'include',
         body: JSON.stringify({ roomId }),
       });
       const data = await response.json();
@@ -63,6 +64,7 @@ const ChatList = ({ dividerPosition, showEdit, showChatroom }) => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
+        credentials: 'include',
       });
       const data = await response.json();
       if (response.ok) {

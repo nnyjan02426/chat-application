@@ -17,7 +17,7 @@ const server = http.createServer(app);
 console.log('初始化 Socket.IO...');
 const io = socketIo(server, {
     cors: {
-        origin: ["*"],
+        origin: ["https://nnyjan02426.github.io", "http://localhost:3000"],
         methods: ["GET", "POST", "OPTIONS"],
         credentials: true,
     }
@@ -26,7 +26,7 @@ const io = socketIo(server, {
 // 中間件
 app.options('*', cors());
 app.use(cors({
-        origin: ["*"],
+        origin: ["https://nnyjan02426.github.io", "http://localhost:3000"],
         methods: ["GET", "POST", "OPTIONS"],
         credentials: true,
     }));
