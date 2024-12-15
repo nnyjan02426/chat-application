@@ -5,8 +5,6 @@ import emailIcon from './email.svg';
 import passwordIcon from './password.svg';
 import { useState } from 'react';
 
-const backendURL = "https://webchatapp-ace8c3b8dmeqh0ay.canadacentral-01.azurewebsites.net"
-
 const Login = ({ setUser }) => {
   // TODO: email & password regex
   const [email, setEmail] = useState('');
@@ -25,7 +23,7 @@ const Login = ({ setUser }) => {
 
     try {
       setIsLoading(true);
-      const url = (action === 'login') ? `${backendURL}/api/auth/login` : `${backendURL}/api/auth/register`;
+      const url = (action === 'login') ? `${process.env.REACT_APP_SOCKET_URL}/api/auth/login` : `${process.env.REACT_APP_SOCKET_URL}/api/auth/register`;
       const payload = (action === 'login')
         ? { email, password }
         : { email, password, username };
