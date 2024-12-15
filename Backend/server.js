@@ -17,7 +17,8 @@ const server = http.createServer(app);
 console.log('初始化 Socket.IO...');
 const io = socketIo(server, {
     cors: {
-        origin: ["https://nnyjan02426.github.io", "http://localhost:3000"],
+        // origin: ["https://nnyjan02426.github.io", "http://localhost:3000"],
+        origin: ["*"],
         methods: ["GET", "POST", "OPTIONS"],
         credentials: true,
     }
@@ -32,7 +33,7 @@ const corsOptions = {
 
 // 中間件
 app.options('*', cors(corsOptions));
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 // MongoDB 連接配置
