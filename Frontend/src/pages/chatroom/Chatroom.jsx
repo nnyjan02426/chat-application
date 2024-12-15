@@ -6,10 +6,11 @@ import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import { jwtDecode } from "jwt-decode";
 
+const socket_url = "https://webchatapp-ace8c3b8dmeqh0ay.canadacentral-01.azurewebsites.net";
 
 // backend url
 // const socket = io('http://localhost:3000');
-const socket = io(process.env.REACT_APP_SOCKET_URL|| 'http://localhost:3000');
+const socket = io(socket_url|| 'http://localhost:3000');
 
 // fetch username from stored token
 const token = localStorage.getItem('token');
