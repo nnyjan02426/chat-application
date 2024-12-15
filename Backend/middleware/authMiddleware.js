@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = process.env.JWT_SECRET
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const authMiddleware = (req, res, next) => {
   // 從 Authorization header 取得 token
@@ -13,15 +13,15 @@ const authMiddleware = (req, res, next) => {
   try {
     // 驗證 token
     const decoded = jwt.verify(token, JWT_SECRET);
-
+    
     // 將用戶 ID 附加到 request 物件
     req.user = decoded;
-
+    
     next();
   } catch (error) {
-    res.status(401).json({
-      message: 'token 無效',
-      error: error.message
+    res.status(401).json({ 
+      message: 'token 無效', 
+      error: error.message 
     });
   }
 };
