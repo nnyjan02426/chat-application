@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import { jwtDecode } from "jwt-decode";
 
-const socket_url = "https://webchatapp-ace8c3b8dmeqh0ay.canadacentral-01.azurewebsites.net";
+const socket_url = "chatt-d5b3d4ckb4b8fcaa.japaneast-01.azurewebsites.net";
 
 // backend url
 // const socket = io('http://localhost:3000');
