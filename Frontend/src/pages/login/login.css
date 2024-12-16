@@ -76,3 +76,8 @@
   color: var(--subtext-color);
   text-decoration: underline;
 }
+
+.force-button:hover {
+  color: var(--red-color);
+  text-decoration: underline;
+}

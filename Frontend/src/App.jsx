@@ -80,7 +80,7 @@ const App = () => {
                         <Chatroom dividerPosition={dividerPosition} roomId={currentRoomId} />
                     }
                 </div>
-            ) : (<Login setUser={setUser} />)}
+            ) : (<Login setUser={setUser} setShowEdit={setShowEdit}/>)}
         </>
     );
 }
